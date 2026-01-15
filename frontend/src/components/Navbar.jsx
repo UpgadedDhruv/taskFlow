@@ -10,7 +10,7 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="bg-linear-to-r from-blue-600 to-purple-600 text-white shadow-lg">
+    <nav className="bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg">
       <div className="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
         <Link
           to="/"
