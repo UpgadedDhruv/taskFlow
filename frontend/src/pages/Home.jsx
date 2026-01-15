@@ -2,14 +2,14 @@ import { Link } from "react-router-dom";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-linear-to-br from-blue-50 via-purple-50 to-pink-50">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50">
       {/* Hero Section */}
       <div className="max-w-8xl mx-auto px-4 py-16 md:py-24">
         <div className="text-center mb-16">
           <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
             Organize Your Tasks,
             <br />
-            <span className="bg-linear-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
               Master Your Goals
             </span>
           </h1>
@@ -20,7 +20,7 @@ export default function Home() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               to="/register"
-              className="inline-block bg-linear-to-r from-blue-600 to-purple-600 text-white font-bold py-4 px-8 rounded-lg hover:from-blue-700 hover:to-purple-700 transition duration-200 shadow-lg"
+              className="inline-block bg-gradient-to-r from-blue-600 to-purple-600 text-white font-bold py-4 px-8 rounded-lg hover:from-blue-700 hover:to-purple-700 transition duration-200 shadow-lg"
             >
               Get Started Free →
             </Link>
@@ -135,11 +135,8 @@ export default function Home() {
           </div>
         </div>
 
-      
-        
-
         {/* Call to Action */}
-        <div className="bg-linear-to-r from-blue-600 to-purple-600 rounded-2xl p-12 md:p-16 text-white text-center shadow-xl">
+        <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl p-12 md:p-16 text-white text-center shadow-xl">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             Ready to Get Organized?
           </h2>
