@@ -74,18 +74,15 @@ export default function Dashboard() {
     fetchTasks();
   }, []);
 
-  // Filter and search tasks
   useEffect(() => {
     let filtered = tasks;
 
-    // Apply search filter
     if (searchTerm) {
       filtered = filtered.filter((task) =>
         task.title.toLowerCase().includes(searchTerm.toLowerCase())
       );
     }
 
-    // Apply status filter
     if (filterStatus === "completed") {
       filtered = filtered.filter((task) => task.completed);
     } else if (filterStatus === "pending") {
@@ -96,9 +93,8 @@ export default function Dashboard() {
   }, [tasks, searchTerm, filterStatus]);
 
   return (
-    <div className="min-h-screen bg-linear-to-br from-gray-50 to-blue-50 py-8">
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-blue-50 py-8">
       <div className="max-w-5xl mx-auto px-4">
-        {/* Header */}
         <div className="mb-8">
           <h1 className="text-4xl font-bold text-gray-900 mb-2">📋 My Tasks</h1>
           <p className="text-gray-600">
@@ -106,7 +102,6 @@ export default function Dashboard() {
           </p>
         </div>
 
-        {/* Error Alert */}
         {error && (
           <div className="bg-red-50 border border-red-200 text-red-700 px-6 py-4 rounded-lg mb-6 flex items-start gap-3">
             <span className="text-xl mt-1">⚠️</span>
@@ -114,10 +109,8 @@ export default function Dashboard() {
           </div>
         )}
 
-        {/* Main Content Card */}
         <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
-          {/* Add Task Form */}
-          <div className="bg-linear-to-r from-blue-50 to-purple-50 p-6 border-b border-gray-200">
+          <div className="bg-gradient-to-r from-blue-50 to-purple-50 p-6 border-b border-gray-200">
             <form onSubmit={addTask} className="space-y-3">
               <div className="flex gap-3">
                 <input
@@ -129,7 +122,7 @@ export default function Dashboard() {
                 />
                 <button
                   type="submit"
-                  className="bg-linear-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold py-3 px-8 rounded-lg transition duration-200 flex items-center gap-2"
+                  className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold py-3 px-8 rounded-lg transition duration-200 flex items-center gap-2"
                 >
                   <span>+</span>
                   Add Task
@@ -138,7 +131,6 @@ export default function Dashboard() {
             </form>
           </div>
 
-          {/* Filters and Search */}
           <div className="p-6 border-b border-gray-200">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
               <div>
@@ -169,9 +161,8 @@ export default function Dashboard() {
               </div>
             </div>
 
-            {/* Task Statistics */}
             <div className="grid grid-cols-3 gap-4">
-              <div className="bg-linear-to-br from-blue-50 to-blue-100 p-4 rounded-lg border border-blue-200">
+              <div className="bg-gradient-to-br from-blue-50 to-blue-100 p-4 rounded-lg border border-blue-200">
                 <p className="text-blue-600 text-sm font-semibold mb-1">
                   Total Tasks
                 </p>
@@ -179,7 +170,7 @@ export default function Dashboard() {
                   {tasks.length}
                 </p>
               </div>
-              <div className="bg-linear-to-br from-green-50 to-green-100 p-4 rounded-lg border border-green-200">
+              <div className="bg-gradient-to-br from-green-50 to-green-100 p-4 rounded-lg border border-green-200">
                 <p className="text-green-600 text-sm font-semibold mb-1">
                   Completed
                 </p>
@@ -187,7 +178,7 @@ export default function Dashboard() {
                   {tasks.filter((t) => t.completed).length}
                 </p>
               </div>
-              <div className="bg-linear-to-br from-orange-50 to-orange-100 p-4 rounded-lg border border-orange-200">
+              <div className="bg-gradient-to-br from-orange-50 to-orange-100 p-4 rounded-lg border border-orange-200">
                 <p className="text-orange-600 text-sm font-semibold mb-1">
                   Pending
                 </p>
@@ -198,7 +189,6 @@ export default function Dashboard() {
             </div>
           </div>
 
-          {/* Tasks List */}
           <div className="p-6">
             {loading ? (
               <div className="text-center py-12">
